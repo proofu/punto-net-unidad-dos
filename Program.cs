@@ -1,72 +1,47 @@
 ﻿using System;
+namespace TP2._0
 
-namespace Unidad2OrtizProfumieriUnzaga
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
-        {
-            PuntoDos();
-            //PuntoTres();
 
-        }
-
-
-        static void PuntoDos()
         {
             /*
              Hacer un programa que le pida al usuario que ingrese un número 
              y le responda si es divisible por 4.
             */
+            //Punto 2
+            int userNumber = NumeroValidacion("Ingresa un número para saber si es divisible por 4: ");
+            double divisionRest = userNumber % 4;
 
-            int number;
-            int num;
-            string userNumber="";
-            double divisionRest;
-            Console.WriteLine("ingresa un número");
-            userNumber = Console.ReadLine();
-            while (userNumber=="")
+            if (divisionRest == 0)
             {
-                if (int.TryParse(userNumber, out num))
-                {
-                    number = Convert.ToInt32(userNumber);
-                    divisionRest = number % 4;
-                    if (divisionRest == 0)
-                    {
-                        Console.WriteLine("el número es divisible por 4");
-                    }
-                    else if (divisionRest != 0)
-                    {
-                        Console.WriteLine("el número NO es divisible por 4");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("caracter incorrecto");
-                    userNumber = "";
-                }
+                Console.WriteLine($"el número {userNumber} es divisible por 4");
             }
-        }
-        private static void PuntoTres()
-        {
+            else if (divisionRest != 0)
+            {
+                Console.WriteLine($"el número {userNumber} NO es divisible por 4");
+            }
+
             /*
              * Hacer un programa que le pida al usuario que ingrese dos números, 
              * luego los compare y muestre si el primer numero es mayor, igual o 
              * menor que el segundo.
              */
-            int firstNumber;
-            int secondNumber;
-            Console.WriteLine("ingrese el primer número");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("ingrese el segundo número");
-            secondNumber = Convert.ToInt32(Console.ReadLine());
+
+            // Punto 3
+
+            int firstNumber = NumeroValidacion("ingrese el primer número para realizar la comparativa: ");
+            int secondNumber = NumeroValidacion("ingrese el segundo número: ");
+
             if (firstNumber > secondNumber)
             {
                 Console.WriteLine("el primer número es mayor que el segundo");
             }
             else if (firstNumber < secondNumber)
             {
-                Console.WriteLine("el segundo número es mayor que el segundo");
+                Console.WriteLine("el segundo número es mayor que el primero");
             }
             else if (secondNumber == firstNumber)
             {
@@ -75,13 +50,56 @@ namespace Unidad2OrtizProfumieriUnzaga
 
             }
 
+            // Punto 4
+            int mesNumero = NumeroValidacion("Ingrese un número del 1 al 12 para saber el mes correspondiente: ", 1, 12);
+
+            switch (mesNumero)
+            {
+                case 1: Console.WriteLine("Enero"); break;
+                case 2: Console.WriteLine("Febrero"); break;
+                case 3: Console.WriteLine("Marzo"); break;
+                case 4: Console.WriteLine("Abril"); break;
+                case 5: Console.WriteLine("Mayo"); break;
+                case 6: Console.WriteLine("Junio"); break;
+                case 7: Console.WriteLine("Julio"); break;
+                case 8: Console.WriteLine("Agosto"); break;
+                case 9: Console.WriteLine("Septiembre"); break;
+                case 10: Console.WriteLine("Octubre"); break;
+                case 11: Console.WriteLine("Noviembre"); break;
+                case 12: Console.WriteLine("Diciembre"); break;
+            }
+
+            // Punto 5
+            int numeroTabla = NumeroValidacion("Ingrese un número para mostrar su tabla de multiplicar del 1 al 10: ");
+
+            Console.WriteLine($"Tabla de multiplicar del {numeroTabla}:");
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{numeroTabla} x {i} = {numeroTabla * i}");
+            }
+            Console.ReadLine();
+        }
+
+        //Punto 6
+        static byte NumeroValidacion(string mensaje, byte min = byte.MinValue, byte max = byte.MaxValue)
+        {
+            byte numero;
+            bool flag;
+
+            do
+            {
+                Console.Write(mensaje);
+                string entrada = Console.ReadLine();
+                flag = byte.TryParse(entrada, out numero) && numero >= min && numero <= max;
+
+                if (!flag)
+                {
+                    Console.WriteLine("Error: Ingrese un número válido.");
+                }
+
+            } while (!flag);
+
+            return numero;
         }
     }
 }
-
-
-
-
-
-
-

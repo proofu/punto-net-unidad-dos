@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Unidad2OrtizProfumieriUnzaga")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d25d5cf73078ff104f797693716885e199d9d50d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Unidad2OrtizProfumieriUnzaga")]
