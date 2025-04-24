@@ -10,43 +10,42 @@ namespace Unidad2OrtizProfumieriUnzaga
             PuntoTres();
             PuntoCuatro();
             PuntoCinco();
-
         }
 
 
         static void PuntoDos()
         {
-            int userNumber;
-            double divisionRest;
+            int numeroUsuario;
+            double restoDivision;
 
-            userNumber = NumeroValidacion("Ingresa un número para saber si es divisible por 4: ");
-            divisionRest = userNumber % 4;
+            numeroUsuario = NumeroValidacion("Ingresa un número para saber si es divisible por 4: ");
+            restoDivision = numeroUsuario % 4;
             
-            if (divisionRest == 0)
+            if (restoDivision == 0)
             {
-                Console.WriteLine($"el número {userNumber} es divisible por 4");
+                Console.WriteLine($"el número {numeroUsuario} es divisible por 4");
             }
-            else if (divisionRest != 0)
+            else if (restoDivision != 0)
             {
-                Console.WriteLine($"el número {userNumber} NO es divisible por 4");
+                Console.WriteLine($"el número {numeroUsuario} NO es divisible por 4");
             }
         }
         private static void PuntoTres()
         {
-            int firstNumber;
-            int secondNumber;
-            firstNumber = NumeroValidacion("ingrese el primer número para realizar la comparativa: ");
-            secondNumber = NumeroValidacion("ingrese el segundo número: ");
+            int primerNumero;
+            int segundoNumero;
+            primerNumero = NumeroValidacion("ingrese el primer número para realizar la comparativa: ");
+            segundoNumero = NumeroValidacion("ingrese el segundo número: ");
 
-            if (firstNumber > secondNumber)
+            if (primerNumero > segundoNumero)
             {
                 Console.WriteLine("el primer número es mayor que el segundo");
             }
-            else if (firstNumber < secondNumber)
+            else if (primerNumero < segundoNumero)
             {
                 Console.WriteLine("el segundo número es mayor que el primero");
             }
-            else if (secondNumber == firstNumber)
+            else if (segundoNumero == primerNumero)
             {
 
                 Console.WriteLine("los números son iguales");
