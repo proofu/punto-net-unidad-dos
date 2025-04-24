@@ -7,7 +7,9 @@ namespace Unidad2OrtizProfumieriUnzaga
         static void Main(string[] args)
         {
             PuntoDos();
-            //PuntoTres();
+            PuntoTres();
+            PuntoCuatro();
+            PuntoCinco();
 
         }
 
@@ -43,17 +45,16 @@ namespace Unidad2OrtizProfumieriUnzaga
              */
             int firstNumber;
             int secondNumber;
-            Console.WriteLine("ingrese el primer número");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("ingrese el segundo número");
-            secondNumber = Convert.ToInt32(Console.ReadLine());
+            firstNumber = NumeroValidacion("ingrese el primer número para realizar la comparativa: ");
+            secondNumber = NumeroValidacion("ingrese el segundo número: ");
+
             if (firstNumber > secondNumber)
             {
                 Console.WriteLine("el primer número es mayor que el segundo");
             }
             else if (firstNumber < secondNumber)
             {
-                Console.WriteLine("el segundo número es mayor que el segundo");
+                Console.WriteLine("el segundo número es mayor que el primero");
             }
             else if (secondNumber == firstNumber)
             {
@@ -63,6 +64,39 @@ namespace Unidad2OrtizProfumieriUnzaga
             }
 
         }
+        private static void PuntoCuatro()
+        {
+            int mesNumero = NumeroValidacion("Ingrese un número del 1 al 12 para saber el mes correspondiente: ", 1, 12);
+
+            switch (mesNumero)
+            {
+                case 1: Console.WriteLine("Enero"); break;
+                case 2: Console.WriteLine("Febrero"); break;
+                case 3: Console.WriteLine("Marzo"); break;
+                case 4: Console.WriteLine("Abril"); break;
+                case 5: Console.WriteLine("Mayo"); break;
+                case 6: Console.WriteLine("Junio"); break;
+                case 7: Console.WriteLine("Julio"); break;
+                case 8: Console.WriteLine("Agosto"); break;
+                case 9: Console.WriteLine("Septiembre"); break;
+                case 10: Console.WriteLine("Octubre"); break;
+                case 11: Console.WriteLine("Noviembre"); break;
+                case 12: Console.WriteLine("Diciembre"); break;
+            }
+        }
+
+        private static void PuntoCinco()
+        {
+            int numeroTabla = NumeroValidacion("Ingrese un número para mostrar su tabla de multiplicar del 1 al 10: ");
+
+            Console.WriteLine($"Tabla de multiplicar del {numeroTabla}:");
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{numeroTabla} x {i} = {numeroTabla * i}");
+            }
+            Console.ReadLine();
+        }
+
         //Punto 6
         public static byte NumeroValidacion(string mensaje, byte min = byte.MinValue, byte max = byte.MaxValue)
         {
