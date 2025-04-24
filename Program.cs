@@ -16,11 +16,6 @@ namespace Unidad2OrtizProfumieriUnzaga
 
         static void PuntoDos()
         {
-            /*
-             Hacer un programa que le pida al usuario que ingrese un número 
-             y le responda si es divisible por 4.
-            */
-
             int userNumber;
             double divisionRest;
 
@@ -38,11 +33,6 @@ namespace Unidad2OrtizProfumieriUnzaga
         }
         private static void PuntoTres()
         {
-            /*
-             * Hacer un programa que le pida al usuario que ingrese dos números, 
-             * luego los compare y muestre si el primer numero es mayor, igual o 
-             * menor que el segundo.
-             */
             int firstNumber;
             int secondNumber;
             firstNumber = NumeroValidacion("ingrese el primer número para realizar la comparativa: ");
