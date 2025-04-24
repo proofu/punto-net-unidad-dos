@@ -12,3 +12,4 @@ C:\Users\alfred\source\repos\Unidad2OrtizProfumieriUnzaga\Unidad2OrtizProfumieri
 C:\Users\alfred\source\repos\Unidad2OrtizProfumieriUnzaga\Unidad2OrtizProfumieriUnzaga\obj\Debug\net8.0\Unidad2OrtizProfumieriUnzaga.pdb
 C:\Users\alfred\source\repos\Unidad2OrtizProfumieriUnzaga\Unidad2OrtizProfumieriUnzaga\obj\Debug\net8.0\Unidad2OrtizProfumieriUnzaga.genruntimeconfig.cache
 C:\Users\alfred\source\repos\Unidad2OrtizProfumieriUnzaga\Unidad2OrtizProfumieriUnzaga\obj\Debug\net8.0\ref\Unidad2OrtizProfumieriUnzaga.dll
+C:\Users\alfred\source\repos\Unidad2OrtizProfumieriUnzaga\Unidad2OrtizProfumieriUnzaga\obj\Debug\net8.0\Unidad2OrtizProfumieriUnzaga.sourcelink.json

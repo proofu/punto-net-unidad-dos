@@ -19,32 +19,19 @@ namespace Unidad2OrtizProfumieriUnzaga
              y le responda si es divisible por 4.
             */
 
-            int number;
-            int num;
-            string userNumber="";
+            int userNumber;
             double divisionRest;
-            Console.WriteLine("ingresa un número");
-            userNumber = Console.ReadLine();
-            while (userNumber=="")
+
+            userNumber = NumeroValidacion("Ingresa un número para saber si es divisible por 4: ");
+            divisionRest = userNumber % 4;
+            
+            if (divisionRest == 0)
             {
-                if (int.TryParse(userNumber, out num))
-                {
-                    number = Convert.ToInt32(userNumber);
-                    divisionRest = number % 4;
-                    if (divisionRest == 0)
-                    {
-                        Console.WriteLine("el número es divisible por 4");
-                    }
-                    else if (divisionRest != 0)
-                    {
-                        Console.WriteLine("el número NO es divisible por 4");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("caracter incorrecto");
-                    userNumber = "";
-                }
+                Console.WriteLine($"el número {userNumber} es divisible por 4");
+            }
+            else if (divisionRest != 0)
+            {
+                Console.WriteLine($"el número {userNumber} NO es divisible por 4");
             }
         }
         private static void PuntoTres()
@@ -75,6 +62,27 @@ namespace Unidad2OrtizProfumieriUnzaga
 
             }
 
+        }
+        //Punto 6
+        public static byte NumeroValidacion(string mensaje, byte min = byte.MinValue, byte max = byte.MaxValue)
+        {
+            byte numero;
+            bool flag;
+
+            do
+            {
+                Console.Write(mensaje);
+                string entrada = Console.ReadLine();
+                flag = byte.TryParse(entrada, out numero) && numero >= min && numero <= max;
+
+                if (!flag)
+                {
+                    Console.WriteLine("Error: Ingrese un número válido.");
+                }
+
+            } while (!flag);
+
+            return numero;
         }
     }
 }
